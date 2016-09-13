@@ -11,9 +11,9 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/mreiferson/go-options"
-	"github.com/nsqio/nsq/internal/app"
-	"github.com/nsqio/nsq/internal/version"
-	"github.com/nsqio/nsq/nsqadmin"
+	"github.com/pingpp/nsq/internal/app"
+	"github.com/pingpp/nsq/internal/version"
+	"github.com/pingpp/nsq/nsqadmin"
 )
 
 var (

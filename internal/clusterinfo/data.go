@@ -10,8 +10,8 @@ import (
 	"sync"
 
 	"github.com/blang/semver"
-	"github.com/nsqio/nsq/internal/http_api"
-	"github.com/nsqio/nsq/internal/stringy"
+	"github.com/pingpp/nsq/internal/http_api"
+	"github.com/pingpp/nsq/internal/stringy"
 )
 
 var v1EndpointVersion semver.Version
