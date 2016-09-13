@@ -1,15 +1,25 @@
 {{> warning}}
 {{> error}}
 
+<div class="bs-docs-header" id="content">
+      <div class="container">
+        <h1>Nsqd Nodes</h1>
+        <p>如果你有N个Nsqd连接到Lookupd，那么这些Nsqd都将在以下显示</p>
+      </div>
+</div>
+
 <div class="row">
-    <div class="col-md-12">
-        <h2>NSQd Nodes ({{collection.length}})</h2>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span>  首页</a></li>
+            <li class="active"><span class="glyphicon glyphicon-random"></span>  Nsqd Nodes</li>
+        </ol>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <table class="table table-condensed table-bordered">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:scroll">
+        <table class="table table-striped">
             <tr>
                 <th>Hostname</th>
                 <th>Broadcast Address</th>
@@ -32,7 +42,7 @@
                 <td>
                     <a class="conn-count btn btn-default btn-xs {{#unlesseq ../../nsqlookupd.length remote_addresses.length}}btn-warning{{/unlesseq}}">{{remote_addresses.length}}</a>
                     <div style="display: none;">
-                        {{#each remote_addresses}}{{this}}<br/>{{/each}}
+                        {{#each remote_addresses}}<span class="label label-primary" style="position:absolute;z-index:9999">{{this}}</span>{{/each}}
                     </div>
                 </td>
                 {{/if}}

@@ -1,31 +1,30 @@
 {{> warning}}
 {{> error}}
 
+<div class="bs-docs-header" id="content">
+      <div class="container">
+        <h1>Topics</h1>
+        <p>如果你的程序订阅了一个Topic，那么你的Topic将会在以下显示</p>
+      </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
-        <h2>Topics</h2>
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li class="active"><span class="glyphicon glyphicon-comment"></span> Topics</li>
+        </ol>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
     {{#if collection.length}}
-        <table class="table table-condensed table-bordered">
-            <tr>
-                <th>Topic</th>
-                {{#if graph_active}}<th width="120">Depth</th>{{/if}}
-                {{#if graph_active}}<th width="120">Messages</th>{{/if}}
-                {{#if graph_active}}<th width="120">Rate</th>{{/if}}
-            </tr>
             {{#each collection}}
-            <tr>
-                <td><a class="link" href="/topics/{{urlencode name}}">{{name}}</a></td>
-                {{#if ../graph_active}}<td><a class="link" href="/topics/{{urlencode name}}"><img width="120" height="20" src="{{sparkline "topic" "" name "" "depth"}}"></a></td>{{/if}}
-                {{#if ../graph_active}}<td><a class="link" href="/topics/{{urlencode name}}"><img width="120" height="20" src="{{sparkline "topic" "" name "" "message_count"}}"></a></td>{{/if}}
-                {{#if ../graph_active}}<td class="bold rate" target="{{rate "topic" "*" name ""}}"></td>{{/if}}
-            </tr>
+            <div class="col-md-4 col-sm-12">
+                <a type="button" class="btn btn-default btn-block" href="/topics/{{urlencode name}}">{{name}}</a>
+            </div>    
             {{/each}}
-        </table>
     {{else}}
         <div class="alert alert-warning"><h4>Notice</h4>No Topics Found</div>
     {{/if}}

@@ -1,3 +1,32 @@
+.bs-docs-header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    position: relative;
+    padding: 30px 15px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #6f5499;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#163d1c),to(#333));
+    background-image: -webkit-linear-gradient(top,#111111 0,#333 100%);
+    background-image: -o-linear-gradient(top,#111111 0,#333 100%);
+    background-image: linear-gradient(to bottom,#111111 0,#333 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#111111', endColorstr='#333', GradientType=0);
+    background-repeat: repeat-x;
+}
+
+.lookup_host {
+    border: solid 1px #ccc;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: text-bottom;
+}
+
 .red {
     color: #c30;
 }

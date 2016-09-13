@@ -2,8 +2,8 @@
 {{> error}}
 
 <ol class="breadcrumb">
-  <li><a class="link" href="/">Streams</a>
-  <li class="active">{{name}}</li>
+  <li><a class="link" href="/topics"><span class="glyphicon glyphicon-comment"></span> Topics</a>
+  <li class="active"><span class="glyphicon glyphicon-stats"></span>  {{name}}</li>
 </ol>
 
 <div class="row">
@@ -27,16 +27,16 @@
 {{else}}
 <div class="row topic-actions">
     <div class="col-md-2">
-        <button class="btn btn-medium btn-warning" data-action="empty">Empty Queue</button>
+        <button class="btn btn-medium btn-warning" data-action="empty"  disabled="disabled">Empty Queue</button>
     </div>
     <div class="col-md-2">
-        <button class="btn btn-medium btn-danger" data-action="delete">Delete Topic</button>
+        <button class="btn btn-medium btn-danger" data-action="delete" disabled="disabled">Delete Topic</button>
     </div>
     <div class="col-md-2">
         {{#if paused}}
-        <button class="btn btn-medium btn-success" data-action="unpause">UnPause Topic</button>
+        <button class="btn btn-medium btn-success" data-action="unpause" disabled="disabled">UnPause Topic</button>
         {{else}}
-        <button class="btn btn-medium btn-primary" data-action="pause">Pause Topic</button>
+        <button class="btn btn-medium btn-primary" data-action="pause" disabled="disabled">Pause Topic</button>
         {{/if}}
     </div>
 </div>
@@ -65,7 +65,7 @@
         {{#each nodes}}
         <tr>
             <td>
-                <button class="btn-link red tombstone-link" data-node="{{node}}" data-topic="{{../name}}" style="padding: 0 6px; border: 0;">✘</button>
+                <button class="btn-link red tombstone-link" data-node="{{node}}" data-topic="{{../name}}" style="padding: 0 6px; border: 0;"  disabled="disabled">✘</button>
                 {{#if show_broadcast_address}}
                 {{hostname_port}} (<a class="link" href="/nodes/{{node}}">{{node}}</a>)
                 {{else}}

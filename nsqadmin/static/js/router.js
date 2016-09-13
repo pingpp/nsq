@@ -5,11 +5,11 @@ var Pubsub = require('./lib/pubsub');
 
 var Router = Backbone.Router.extend({
     routes: {
-        '': 'topics',
+        '': 'counter',
+        'topics': 'topics',
         'topics/(:topic)(/:channel)': 'topic',
         'lookup': 'lookup',
-        'nodes(/:node)': 'nodes',
-        'counter': 'counter'
+        'nodes(/:node)': 'nodes'
     },
 
     defaultRoute: 'topics',

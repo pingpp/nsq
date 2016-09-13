@@ -1,9 +1,19 @@
 {{> warning}}
 {{> error}}
 
+<div class="bs-docs-header" id="content">
+      <div class="container">
+        <h1>NsqLookupd</h1>
+        <p>nsqlookupd是守护进程负责管理Nsq拓扑信息</p>
+      </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
-        <h2>Lookup</h2>
+        <ol class="breadcrumb">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li class="active"><span class="glyphicon glyphicon-road"></span> NsqLookupd</li>
+        </ol>
     </div>
 </div>
 
@@ -13,20 +23,23 @@
 </div>
 {{else}}
 <div class="row">
-    <div class="col-md-4">
-        <table class="table table-bordered table-condensed">
-            <tr>
-                <th>nsqlookupd Host</th>
-            </tr>
-            {{#each nsqlookupd}}
-            <tr><td>{{this}}</td></tr>
-            {{/each}}
-        </table>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Nsqlookupd Hosts</div>
+            <div class="panel-body">
+                {{#each nsqlookupd}}
+                    <div class="col-md-4 col-sm-12">
+                        <div class="lookup_host">{{this}}</div>
+                    </div>  
+                {{/each}}
+            </div>
+        </div>
+            
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         {{#if topics}}
         <div class="alert alert-info">
             Below is a tree of Topics/Channels that are currently inactive (i.e. not produced on any nsqd in the cluster but are present in the lookup data)
@@ -48,24 +61,6 @@
         {{else}}
         <div class="alert alert-warning"><h4>Notice</h4>No inactive Topics</div>
         {{/if}}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <form class="hierarchy">
-            <legend>Create Topic/Channel</legend>
-            <div class="alert alert-info">
-                <p>This provides a way to setup a stream hierarchy
-                before services are deployed to production.
-                <p>If <em>Channel Name</em> is empty, just the topic is created.
-            </div>
-            <div class="form-group">
-                <input type="text" name="topic" placeholder="Topic Name">
-                <input type="text" name="channel" placeholder="Channel Name">
-            </div>
-            <button class="btn btn-default" type="submit">Create</button>
-        </form>
     </div>
 </div>
 {{/unless}}
